@@ -24,9 +24,9 @@ const config = {
             Add New Product
           </h1>
         </div>
-        <div>
+        <div className="">
           <label
-            class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4  "
+            class="block font-bold md:text-right mb-1 md:mb-0 pr-4 flex"
             for="inline-full-name"
           >
             Product title
@@ -44,7 +44,7 @@ const config = {
 
         <div className="mt-3">
           <label
-            class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            class="block font-bold md:text-right mb-1 md:mb-0 pr-4 flex"
             for="inline-full-name mb-2"
           >
             Product description
@@ -60,7 +60,7 @@ const config = {
         </div>
         <div className="mt-3">
           <label
-            class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            class="block font-bold md:text-right mb-1 md:mb-0 pr-4 flex"
             for="inline-full-name mb-2"
           >
             Upload media
@@ -79,18 +79,18 @@ const config = {
 
           <div className="mt-3">
             <label
-              class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+              class="block font-bold md:text-right mb-1 pr-4 flex"
               for="inline-full-name mb-2"
             >
               SEO Meta Detail
             </label>
-            <div className="flex  items-center border-2   md:shadow-sm mb-3">
+            <div className="flex  items-center border-2   md:shadow-sm mb-2">
               <input
                 className=" bg-transparent outline-none pl-5 text-base"
                 id="inline-full-name"
                 type="text"
                 // value="Enter title here "
-                placeholder="Enter title here"
+                placeholder="SEO Title"
               />
             </div>
             <div className="flex  items-center border-2   md:shadow-sm">
@@ -99,7 +99,7 @@ const config = {
                 id="inline-full-name"
                 type="text"
                 // value="Enter title here "
-                placeholder="Enter title here"
+                placeholder="SEO Description"
               />
             </div>
           </div>
