@@ -5,11 +5,16 @@ function AddProduct() {
 
 const editor = useRef(null);
 const [content, setContent] = useState("");
+const [select,setSelect] = useState('Select');
 
+console.log(select)
 const config = {
   readonly: false, // all options from https://xdsoft.net/jodit/doc/
 };
 
+const handleOption = (e) =>{
+  setSelect (e.target.value);
+}
 
 
 
@@ -59,35 +64,25 @@ const config = {
           />
         </div>
         <div className="mt-3">
-          <div className=" items-center   md:shadow-sm">
-            {/* <input
+          <label
+            class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+            class="block font-bold md:text-right mb-1 md:mb-0 pr-4 flex"
+            for="inline-full-name mb-2"
+          >
+            Upload media
+          </label>
+          <div className="flex  items-center border-2   md:shadow-sm">
+            <input
               className="flex-grow bg-transparent outline-none pl-5 text-base"
               id="inline-full-name"
-              type="file"
+              type="text"
               // value="Enter title here "
-              placeholder="Enter file here"
-            /> */}
-            <label
-              class="block font-bold md:text-right mb-1 md:mb-0 pr-4 flex"
-              for="file"
-            >
-              Upload media
-            </label>
-
-            <input
-              type="file"
-              className="flex-grow  border-2  bg-transparent outline-none pl-5"
-              id="file"
-              style={{ display: "none" }}
-              name="image"
-              accept="image/gif,image/jpeg,image/jpg,image/png"
-              multiple=""
-              data-original-title="upload photos"
+              placeholder="Enter title here"
             />
-
             <UploadIcon className=" h-10 w-10 text-black-500 inline-block justify-items-center pr-2 cursor-pointer" />
           </div>
-          <div className="mt-3">
+          </div>
+          <div className="mt-3 ">
             <label
               class="block font-bold md:text-right mb-1 md:mb-0 pr-4 flex"
               for="file"
@@ -97,6 +92,17 @@ const config = {
             <p className="text-gray-600 text-sm">
               This product has multiple options,like different sizes or colors{" "}
             </p>
+
+            <div className="flex flex-wrap space-x-4">
+              <select className="border-2 px-10 py-2 rounded-md" value = {select} onChange={handleOption}>
+                <option value='size'>Size</option>
+                <option value='color'>Color</option>
+                <option value='material'>Material</option>
+                <option value='style'>Style</option>
+                <option value = 'select'>Select</option>
+              </select>
+              <input type="text" name="" id="" className='border-2 px-10 py-2 rounded-md' />
+            </div>
             <button class="text-gray-50 text-xs hover:bg-blue-700 text-white  py-2 px-4 bg-gray-800  rounded-md mt-3">
               Add Variant Option
             </button>
@@ -128,7 +134,7 @@ const config = {
             </div>
           </div>
         </div>
-      </div>
+     
     );
 }
 
