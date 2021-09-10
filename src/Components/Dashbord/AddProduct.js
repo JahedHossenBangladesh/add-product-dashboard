@@ -81,60 +81,147 @@ const handleOption = (e) =>{
             />
             <UploadIcon className=" h-10 w-10 text-black-500 inline-block justify-items-center pr-2 cursor-pointer" />
           </div>
-          </div>
-          <div className="mt-3 ">
-            <label
-              class="block font-bold md:text-right mb-1 md:mb-0 pr-4 flex"
-              for="file"
-            >
-              Product variant
-            </label>
-            <p className="text-gray-600 text-sm">
-              This product has multiple options,like different sizes or colors{" "}
-            </p>
+        </div>
+        <div className="mt-3 ">
+          <label
+            class="block font-bold md:text-right mb-1 md:mb-0 pr-4 flex"
+            for="file"
+          >
+            Product variant
+          </label>
+          <p className="text-gray-600 text-sm">
+            This product has multiple options,like different sizes or colors{" "}
+          </p>
 
-            <div className="flex flex-wrap space-x-4">
-              <select className="border-2 px-10 py-2 rounded-md" value = {select} onChange={handleOption}>
-                <option value='size'>Size</option>
-                <option value='color'>Color</option>
-                <option value='material'>Material</option>
-                <option value='style'>Style</option>
-                <option value = 'select'>Select</option>
-              </select>
-              <input type="text" name="" id="" className='border-2 px-10 py-2 rounded-md' />
-            </div>
-            <button class="text-gray-50 text-xs hover:bg-blue-700 text-white  py-2 px-4 bg-gray-800  rounded-md mt-3">
-              Add Variant Option
-            </button>
-          </div>
-          <div className="mt-3">
-            <label
-              class="block font-bold md:text-right mb-1 pr-4 flex"
-              for="file"
+          <div className="flex flex-wrap space-x-4">
+            <select
+              className="border-2 px-10 py-2 rounded-md"
+              value={select}
+              onChange={handleOption}
             >
-              SEO Meta Detail
-            </label>
-            <div className="flex  items-center border-2   md:shadow-sm mb-2">
-              <input
-                className=" bg-transparent outline-none pl-5 text-base"
-                id="inline-full-name"
-                type="text"
-                // value="Enter title here "
-                placeholder="SEO Title"
-              />
+              <option value="size">Size</option>
+              <option value="color">Color</option>
+              <option value="material">Material</option>
+              <option value="style">Style</option>
+              <option value="select">Select</option>
+            </select>
+            <input
+              type="text"
+              name=""
+              id=""
+              className="border-2 px-10 py-2 rounded-md"
+            />
+          </div>
+          <div className='border-2 mt-1 mb-2 p-2'>
+            <div className=" flex ">
+              <div className="flex flex-wrap space-x-4">
+                <div className="ml-5 ">
+                  <label htmlFor="size" className="flex font-size-sm">
+                    {" "}
+                    Variant
+                  </label>
+                  <input
+                    type="text"
+                    value="S"
+                    className="bottom-2 p-3 border-2"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-wrap space-x-4">
+                <div className="ml-5 ">
+                  <label htmlFor="size" className="flex">
+                    {" "}
+                    Price
+                  </label>
+                  <input
+                    type="text"
+                    value="S"
+                    className="bottom-2 p-3 border-2"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-wrap space-x-4">
+                <div className="ml-5 ">
+                  <label htmlFor="size" className="flex">
+                    {" "}
+                    Quantity
+                  </label>
+                  <input
+                    type="text"
+                    value="S"
+                    className="bottom-2 p-3 border-2"
+                  />
+                </div>
+              </div>
             </div>
-            <div className="flex  items-center border-2   md:shadow-sm">
-              <input
-                className=" bg-transparent outline-none pl-5 text-base pb-48"
-                id="inline-full-name"
-                type="text"
-                // value="Enter title here "
-                placeholder="SEO Description"
-              />
+            <div className=" flex mt-2">
+              <div className="flex flex-wrap space-x-4">
+                <div className="ml-5 ">
+                
+                  <input
+                    type="text"
+                    value="S"
+                    className="bottom-2 p-3 border-2"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-wrap space-x-4">
+                <div className="ml-5 ">
+                
+                  <input
+                    type="text"
+                    value="S"
+                    className="bottom-2 p-3 border-2"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-wrap space-x-4">
+                <div className="ml-5 ">
+                 
+                  <input
+                    type="text"
+                    value="S"
+                    className="bottom-2 p-3 border-2"
+                  />
+                </div>
+              </div>
             </div>
+          </div>
+          <button class="text-gray-50 text-xs hover:bg-blue-700 text-white  py-2 px-4 bg-gray-800  rounded-md mt-3">
+            Add Variant Option
+          </button>
+        </div>
+        <div className="mt-3">
+          <label
+            class="block font-bold md:text-right mb-1 pr-4 flex"
+            for="file"
+          >
+            SEO Meta Detail
+          </label>
+          <div className="flex  items-center border-2   md:shadow-sm mb-2">
+            <input
+              className=" bg-transparent outline-none pl-5 text-base"
+              id="inline-full-name"
+              type="text"
+              // value="Enter title here "
+              placeholder="SEO Title"
+            />
+          </div>
+          <div className="flex  items-center border-2   md:shadow-sm">
+            <input
+              className=" bg-transparent outline-none pl-5 text-base pb-48"
+              id="inline-full-name"
+              type="text"
+              // value="Enter title here "
+              placeholder="SEO Description"
+            />
           </div>
         </div>
-     
+      </div>
     );
 }
 
