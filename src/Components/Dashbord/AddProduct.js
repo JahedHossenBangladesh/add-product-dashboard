@@ -1,13 +1,18 @@
 import { ArrowNarrowLeftIcon, UploadIcon } from "@heroicons/react/solid";
 import JoditEditor from "jodit-react";
 import React, { useRef, useState } from "react";
+import EscapeOutside from "react-escape-outside";
+
+
+
 function AddProduct() {
 
 const editor = useRef(null);
 const [content, setContent] = useState("");
 const [select,setSelect] = useState('Select');
+const [open,setOpen] = useState(false);
+const [isCollapsed, setIsCollapsed] = React.useState(false);
 
-console.log(select)
 const config = {
   readonly: false, // all options from https://xdsoft.net/jodit/doc/
 };
@@ -16,6 +21,11 @@ const handleOption = (e) =>{
   setSelect (e.target.value);
 }
 
+
+
+const handleEscapeOutside = () =>{
+  setOpen(true);
+}
 
 
 
@@ -92,7 +102,12 @@ const handleOption = (e) =>{
           <p className="text-gray-600 text-sm">
             This product has multiple options,like different sizes or colors{" "}
           </p>
-
+          <div
+            className={`  collapse-content ${
+              isCollapsed ? "collapsed" : "expanded"
+            }`}
+            aria-expanded={isCollapsed}
+          >
           <div className="flex flex-wrap space-x-4">
             <select
               className="border-2 px-10 py-2 rounded-md"
@@ -112,12 +127,11 @@ const handleOption = (e) =>{
               className="border-2 px-10 py-2 rounded-md"
             />
           </div>
-          <div className='border-2 mt-1 mb-2 p-2'>
+          <div className="border-2 mt-1 mb-2 p-2">
             <div className=" flex ">
               <div className="flex flex-wrap space-x-4">
                 <div className="ml-5 ">
                   <label htmlFor="size" className="flex font-size-sm">
-                    {" "}
                     Variant
                   </label>
                   <input
@@ -159,7 +173,6 @@ const handleOption = (e) =>{
             <div className=" flex mt-2">
               <div className="flex flex-wrap space-x-4">
                 <div className="ml-5 ">
-                
                   <input
                     type="text"
                     value="S"
@@ -170,7 +183,6 @@ const handleOption = (e) =>{
 
               <div className="flex flex-wrap space-x-4">
                 <div className="ml-5 ">
-                
                   <input
                     type="text"
                     value="S"
@@ -181,7 +193,6 @@ const handleOption = (e) =>{
 
               <div className="flex flex-wrap space-x-4">
                 <div className="ml-5 ">
-                 
                   <input
                     type="text"
                     value="S"
@@ -191,8 +202,12 @@ const handleOption = (e) =>{
               </div>
             </div>
           </div>
-          <button class="text-gray-50 text-xs hover:bg-blue-700 text-white  py-2 px-4 bg-gray-800  rounded-md mt-3">
-            Add Variant Option
+          </div>
+          <button
+            className="collapse-button text-gray-50 text-xs hover:bg-blue-700 text-white  py-2 px-4 bg-gray-800  rounded-md mt-3"
+            onClick={() => setIsCollapsed(!isCollapsed)}
+          >
+            {isCollapsed ? "Show" : "Hide"} Add Variant Option
           </button>
         </div>
         <div className="mt-3">
